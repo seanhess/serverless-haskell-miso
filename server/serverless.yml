@@ -5,12 +5,14 @@ provider:
   runtime: haskell
 
 functions:
-  get-value:
-    handler: server.get-value
-    runtime: provided
+  value:
+    handler: server.value
+
+  hello:
+    handler: server.hello
     events:
       - http:
-          path: value
+          path: hello/{name}
           method: get
 
     # Here, mypackage is the Haskell package name and myfunc is the executable

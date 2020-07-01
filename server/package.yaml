@@ -23,19 +23,32 @@ dependencies:
 - base >= 4.7 && < 5
 - aeson
 - serverless-haskell
+- lens
+- unordered-containers
+- text
 
-ghc-options:
-- -threaded
-- -rtsopts
-- -with-rtsopts=-N
 
 library:
   source-dirs: src
 
 executables:
-  get-value:
-    main:                Main.hs
-    source-dirs:         app
+  hello:
+    main: Main.hs
+    source-dirs: app/hello
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - server
+
+  value:
+    main: Main.hs
+    source-dirs: app/value
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
     dependencies:
     - server
 
