@@ -6,6 +6,6 @@ main = lambdaMain handler
 
 handler :: Aeson.Value -> IO Int
 handler evt = do
-  putStrLn "This should go to logs"
+  putStrLn "Processing HTTP Request!"
   print evt
   pure 8
