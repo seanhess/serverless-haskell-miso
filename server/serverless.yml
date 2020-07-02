@@ -1,4 +1,6 @@
 service: demo
+org: seanhess
+app: my-first-app
 
 provider:
   name: aws
